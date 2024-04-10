@@ -1,25 +1,21 @@
 return {
-    "nvim-neo-tree/neo-tree.nvim",
-    version = "*",
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-        "MunifTanjim/nui.nvim",
+  'nvim-neo-tree/neo-tree.nvim',
+  version = '*',
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+    'MunifTanjim/nui.nvim',
+  },
+  opts = {
+    window = {
+      position = 'float',
     },
-    keys = {
-        {
-            "<leader>e",
-            function()
-                require("neo-tree.command").execute({
-                    toggle = true,
-                    source = "filesystem",
-                    position = "left",
-                })
-            end,
-            desc = "Filesystem (root dir)",
-        },
+  },
+  keys = {
+    {
+      '<leader>e',
+      '<cmd>Neotree reveal<cr>',
+      desc = 'Explorer Neotree (reveal)',
     },
-    config = function()
-        require("neo-tree").setup({})
-    end,
+  },
 }
